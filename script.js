@@ -69,7 +69,8 @@ let lastPos = 0;
 let hasFarted = false;
 
 function playFart() {
-  const audio = new Audio('assets/fart.mp3');
+  const file = Math.random() < 0.05 ? 'assets/fart2.mp3' : 'assets/fart.mp3';
+  const audio = new Audio(file);
   audio.volume = 0.6;
   audio.play().catch(() => {});
 }
