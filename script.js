@@ -66,6 +66,7 @@ let isDragging = false;
 let startX = 0;
 let startWidth = 0;
 let lastPos = 0;
+let hasFarted = false;
 
 function playFart() {
   const audio = new Audio('assets/fart.mp3');
@@ -79,14 +80,18 @@ fingerTip.addEventListener('mousedown', (e) => {
   startX = e.clientX;
   startWidth = handFinger.offsetWidth;
   lastPos = e.clientX;
+  hasFarted = false;
   handFinger.style.transition = 'none';
-  playFart();
   e.preventDefault();
 });
 
 document.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
   const dx = e.clientX - startX;
+  if (dx > 20 && !hasFarted) {
+    hasFarted = true;
+    playFart();
+  }
   const rawWidth = Math.max(startWidth, startWidth + dx);
   if (document.body.classList.contains('reduce-motion')) {
     const stepped = Math.round(rawWidth / 100) * 100;
