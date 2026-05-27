@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="darkreader" content="off">
+  <title>my egg site</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ui-placeholder.css">
+</head>
+<body>
+  <div class="main-menu" id="mainMenu">
+    <div class="menu-dialog">
+      <div class="menu-title-bar">
+        <span class="menu-title-text">my egg site</span>
+      </div>
+      <div class="menu-body">
+        <p class="menu-heading">Welcome!</p>
+        <p class="menu-desc">This site contains audio and motion effects.</p>
+        <div class="menu-toggles">
+          <div class="menu-toggle-row">
+            <span class="menu-label">Audio</span>
+            <button class="toolbar-btn menu-vol-btn" id="menuVolBtn">
+              <svg id="menuVolIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              </svg>
+            </button>
+          </div>
+          <div class="menu-toggle-row">
+            <span class="menu-label">Motion</span>
+            <button class="toolbar-btn menu-eye-btn" id="menuEyeBtn">
+              <svg id="menuEyeIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <p class="menu-hint">Press ENTER to start</p>
+        <button class="menu-enter-btn" id="menuEnterBtn">ENTER</button>
+      </div>
+    </div>
+  </div>
+  <div class="desktop">
+    <div class="taskbar">
+      <div class="taskbar-right">
+        <button class="toolbar-btn" id="volumeBtn" title="Toggle Mute">
+          <svg id="volumeIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+        </button>
+        <button class="toolbar-btn" id="eyeBtn" title="Toggle Visibility">
+          <svg id="eyeIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="desktop-content" id="desktopContent">
+      <div class="scroll-box">
+        <div class="scroll-inner">
+          <div class="scroll-text">
+            <p>welcome to my website!</p>
+          </div>
+        </div>
+      </div>
+      <div class="hand-container">
+        <div class="hand-palm"></div>
+        <div class="hand-finger">
+          <div class="finger-seg">
+            <button class="finger-btn" id="fingerBtnA">a</button>
+          </div>
+          <div class="finger-seg">
+            <button class="finger-btn" id="fingerBtnB">b</button>
+          </div>
+          <div class="finger-seg tip">
+            <button class="finger-btn" id="fingerBtnC">c</button>
+          </div>
+        </div>
+      </div>
+      <div class="droopy-egg">
+        <div class="egg-shell"></div>
+        <div class="egg-face">
+          <div class="egg-eye left"></div>
+          <div class="egg-eye right"></div>
+          <div class="egg-mouth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
