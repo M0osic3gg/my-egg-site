@@ -66,11 +66,10 @@ let isDragging = false;
 let startX = 0;
 let startWidth = 0;
 let lastPos = 0;
-let totalMovement = 0;
-let lastFartTime = 0;
 
 function playFart() {
   const audio = new Audio('assets/fart.mp3');
+  audio.volume = 0.6;
   audio.play().catch(() => {});
 }
 
@@ -80,9 +79,8 @@ fingerTip.addEventListener('mousedown', (e) => {
   startX = e.clientX;
   startWidth = handFinger.offsetWidth;
   lastPos = e.clientX;
-  totalMovement = 0;
-  lastFartTime = 0;
   handFinger.style.transition = 'none';
+  playFart();
   e.preventDefault();
 });
 
@@ -96,14 +94,7 @@ document.addEventListener('mousemove', (e) => {
   } else {
     handFinger.style.width = rawWidth + 'px';
   }
-  totalMovement += Math.abs(e.clientX - lastPos);
   lastPos = e.clientX;
-  const now = Date.now();
-  if (totalMovement >= 35 && now - lastFartTime >= 60) {
-    totalMovement = 0;
-    lastFartTime = now;
-    playFart();
-  }
 });
 
 document.addEventListener('mouseup', () => {
